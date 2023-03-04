@@ -1,0 +1,44 @@
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>LOGIN</h2>
+        <p>Your Compte </p>
+      </div>
+    </div>
+<body>
+    <div class="contact-form" >
+
+
+        <form  [formGroup]="adminForm" (ngSubmit)="onSubmit()">
+          <div class="field">
+
+            <input type="email" placeholder="Email Address"
+            class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+            <div *ngIf="submitted && f['email'].errors" class="text-danger">
+              <div *ngIf="f['email'].errors['required']">email is required</div>
+              <div *ngIf="f['email'].errors['pattern']">email name not valid.</div>
+            </div>
+          </div>
+          <div class="field space">
+            <input type="password" placeholder="Enter your Password"
+                   class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+                   <div *ngIf="submitted && f['password'].errors" class="text-danger">
+                    <div *ngIf="f['password'].errors['required']">password is required</div>
+                    <div *ngIf="f['password'].errors['pattern']">password not valid.</div>
+                  </div>
+            </div>
+            <br>
+            <div>
+              <button class="custom-btn btn-4" type="submit"> <span *ngIf="loading"> <a routerLink="/admin"></a></span> Login</button>
+            </div>
+              <br>
+            <div class="text-center register-link">
+              Don’t have an account?
+              <a routerLink="/register-ad">Register Now</a>
+            </div>
+
+        </form>
+     </div>
+    </body>
+    </section>

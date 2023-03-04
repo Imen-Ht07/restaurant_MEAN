@@ -1,0 +1,49 @@
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Menu</h2>
+        <p>UPDATE MENU</p>
+      </div>
+    </div>
+
+    <div class="justify-content-center">
+        <div *ngIf="menuForm._id"  class="edit-form"></div>
+            <div class="row">
+                <div class="form-group mt-3">
+                    <input id="file" type="file" class="form-control" placeholder="PIC FOOD"
+                    [(ngModel)]= "menuForm.imageFood" (change)="loadImage($event)" /></div>
+                    <div class="form-group mt-3">
+                    <input type="text" class="form-control" id="name" placeholder="NAME FOOD"
+                     [(ngModel)]= "menuForm.nameFood"> </div>
+                     <div class="form-group mt-3">
+                    <input type="text" class="form-control" id="ingredient" placeholder="INGREDIENT"
+                     [(ngModel)]= "menuForm.ingredient"> </div>
+                <div class="form-group mt-3">
+                    <input type="number" class="form-control" id="prix" placeholder="PRICE"
+                    [(ngModel)]= "menuForm.price"> </div>
+            </div>
+            <div class="mb-2 mt-4">
+            <div class="text-center">
+                <button type="submit"  (click)="updateMenu()" routerLink="/consult">Modifier </button>
+                <button type="reset" routerLink="/consult"> Annuler </button>
+            </div>
+        </div>
+        <!--NGIF*-->
+
+    <div *ngIf="!menuForm._id">
+        <br/><p> Cannot access this MENU !!!...</p>
+    </div>
+        </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
